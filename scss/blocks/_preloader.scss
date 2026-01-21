@@ -1,0 +1,394 @@
+.preloader {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: $color-black;
+    z-index: 11;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation:loaderBackground 1s ease-in 27s forwards;
+    
+
+
+    &__block {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        z-index: 12;
+
+        &::before{
+            content: "";
+            position: absolute;
+            width: 280px;
+            height: 2px;
+            bottom: 80px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: $color-charcoal;
+        }
+
+        &::after{
+            content: "";
+            position: absolute;
+            width: 280px;
+            height: 2px;
+            bottom: 80px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: $color-white;
+            clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+            animation: loaderAnim 25s ease-out 2s forwards;
+        }
+    }
+
+
+    &__company {
+        position: absolute;
+        transition: $transition-300;
+        display: none;
+        opacity: 0;
+        filter: blur(1.5rem);
+
+        &--1 {
+            display: block;
+            top: 122px;
+            right: 0;
+            animation: introIcon 0.5s ease-in 1s forwards, transformIcon-1 8s ease-out forwards, iconOpacity 2s ease-in 6s forwards;
+        }
+
+        &--2 {
+            display: block;
+            top: 50%;
+            left: 0;
+            transform: scale(0.8);
+            animation: introIcon 0.5s ease-in 2s forwards, transformIcon-2 8s ease-out 2s forwards, iconOpacity 2s ease-in 7s forwards;
+        }
+
+        &--3 {
+            display: block;
+            bottom: 0;
+            left: 500px;
+            transform: scale(0.8);
+            animation: introIcon 0.5s ease-in 3s forwards, transformIcon-3 8s ease-out 3s forwards, iconOpacity 2s ease-in 8s forwards;
+        }
+
+        &--4 {
+            display: block;
+            bottom: -30%;
+            right: 178px;
+            transform: scale(0.8);
+            animation: introIcon 0.5s ease-in 4s forwards, transformIcon-4 8s ease-out 4s forwards, iconOpacity 2s ease-in 9s forwards;
+        }
+
+        &--5 {
+            display: block;
+            top: 121px;
+            left: 0;
+            transform: scale(0.8);
+            animation: introIcon 0.5s ease-in 5s forwards, transformIcon-5 8s ease-out 5s forwards, iconOpacity 2s ease-in 10s forwards;
+        }
+
+        &--6 {
+            display: block;
+            top: 0;
+            right: 520px;
+            transform: scale(0.8);
+            animation: introIcon 0.5s ease-in 6s forwards, transformIcon-6 8s ease-out 6s forwards, iconOpacity 2s ease-in 11s forwards;
+        }
+
+        &--7 {
+            display: block;
+            bottom: 0;
+            right: 518px;
+            transform: scale(0.8);
+            animation: introIcon 0.5s ease-in 7s forwards, transformIcon-7 8s ease-out 7s forwards, iconOpacity 2s ease-in 12s forwards;
+            ;
+        }
+
+        &--8 {
+            display: block;
+            top: 0;
+            left: 487px;
+            transform: scale(0.8);
+            animation: introIcon 0.5s ease-in 8s forwards, transformIcon-8 8s ease-out 8s forwards, iconOpacity 2s ease-in 13s forwards;
+
+        }
+
+        &--9 {
+            display: block;
+            bottom: 0;
+            left: 200px;
+            transform: scale(0.8);
+            animation: introIcon 0.5s ease-in 9s forwards, transformIcon-9 8s ease-out 9s forwards, iconOpacity 2s ease-in 14s forwards;
+
+        }
+
+        &--10 {
+            display: block;
+            top: 0;
+            left: 578px;
+            transform: scale(0.8);
+            animation: introIcon 0.5s ease-in 10s forwards, transformIcon-10 8s ease-out 10s forwards, iconOpacity 2s ease-in 15s forwards;
+        }
+
+        &--11 {
+            display: block;
+            top: 0;
+            right: 315px;
+            transform: scale(0.8);
+            animation: introIcon 0.5s ease-in 11s forwards, transformIcon-11 8s ease-out 11s forwards, iconOpacity 2s ease-in 16s forwards;
+        }
+
+        &--12 {
+            display: block;
+            bottom: 0;
+            right: 411px;
+            transform: scale(0.8);
+            animation: introIcon 0.5s ease-in 12s forwards, transformIcon-12 8s ease-out 12s forwards, iconOpacity 2s ease-in 17s forwards;
+        }
+
+        &--13 {
+            display: block;
+            opacity: 0;
+            width: 400px;
+            height: 400px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%) scale(1);
+            animation: introIcon 0.5s ease-in 19s forwards, transformIcon-13 3s ease-out 20s forwards, icon13Opacity 3s ease-out 23s alternate infinite;
+        }
+    }
+
+}
+
+@keyframes iconOpacity {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+
+@keyframes icon13Opacity {
+    0% {
+        opacity: 0.2;
+    }
+    50% {
+        opacity: 0.8;
+    }
+    100% {
+        opacity: 0.2;
+    }
+}
+
+
+
+
+@keyframes introIcon {
+    0% {
+        opacity: 0;
+        filter: blur(1.5rem)
+    }
+
+    100% {
+        opacity: 1;
+        filter: blur(0)
+    }
+}
+
+
+@keyframes transformIcon-1 {
+    0% {
+        top: 122px;
+        right: 0;
+    }
+
+    100% {
+        top: 30%;
+        transform: translateY(50%) scale(0.1);
+        right: 35%;
+    }
+}
+
+
+@keyframes transformIcon-2 {
+    0% {
+        top: 50%;
+        left: 0;
+    }
+
+    100% {
+        top: 50%;
+        left: 35%;
+        transform: translateY(-50%) scale(0.1);
+    }
+}
+
+@keyframes transformIcon-3 {
+    0% {
+        bottom: 0;
+        left: 500px;
+    }
+
+    100% {
+        bottom: 30%;
+        transform: translateY(-50%) scale(0.1);
+        left: 40%;
+    }
+}
+
+@keyframes transformIcon-4 {
+    0% {
+        bottom: 0;
+        right: 178px;
+    }
+
+    100% {
+        bottom: 30%;
+        transform: translateY(-50%) scale(0.1);
+        right: 40%;
+    }
+}
+
+
+@keyframes transformIcon-5 {
+    0% {
+        top: 0;
+        left: 0;
+    }
+
+    100% {
+        top: 50%;
+        transform: translateY(-50%) scale(0.1);
+        left: 35%;
+    }
+}
+
+@keyframes transformIcon-6 {
+    0% {
+        top: 0;
+        right: 520px;
+    }
+
+    100% {
+        top: 50%;
+        transform: translateY(-50%) scale(0.1);
+        right: 40%;
+    }
+}
+
+
+@keyframes transformIcon-7 {
+    0% {
+        bottom: 0;
+        right: 518px;
+    }
+
+    100% {
+        bottom: 30%;
+        transform: translateY(-50%) scale(0.1);
+        right: 40%;
+    }
+}
+
+@keyframes transformIcon-8 {
+    0% {
+        top: 0;
+        left: 487px;
+    }
+
+    100% {
+        top: 50%;
+        transform: translateY(-50%) scale(0.1);
+        left: 40%;
+    }
+}
+
+@keyframes transformIcon-9 {
+    0% {
+        bottom: 0;
+        left: 200px;
+    }
+
+    100% {
+        bottom: 30%;
+        transform: translateY(-50%) scale(0.1);
+        left: 40%;
+    }
+}
+
+@keyframes transformIcon-10 {
+    0% {
+        top: 0;
+        left: 578px;
+    }
+
+    100% {
+        top: 35%;
+        transform: translateY(-50%) scale(0.1);
+        left: 40%;
+    }
+}
+
+@keyframes transformIcon-11 {
+    0% {
+        top: 343px;
+        right: 0;
+    }
+
+    100% {
+        top: 50%;
+        transform: translateY(-50%) scale(0.1);
+        right: 30%;
+    }
+}
+
+@keyframes transformIcon-12 {
+    0% {
+        bottom: 0;
+        right: 411px;
+    }
+
+    100% {
+        bottom: 40%;
+        transform: translateX(-50%) scale(0.1);
+        right: 30%;
+    }
+}
+
+@keyframes transformIcon-13 {
+    0% {
+        transform: translate(-50%,-50%) scale(1);
+    }
+
+    100% {
+        transform: translate(-50%,-50%) scale(0.2);
+
+    }
+}
+
+
+@keyframes loaderAnim {
+    0% {
+        clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+    }
+
+    100% {
+        clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
+    }
+}
+
+
+@keyframes loaderBackground {
+    0% {
+        opacity: 1;;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
